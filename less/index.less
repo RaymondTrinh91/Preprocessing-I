@@ -20,7 +20,7 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
+	font-size: 62.5%;
 	font: inherit;
 	vertical-align: baseline;
 }
@@ -56,4 +56,87 @@ table {
 html, body {
     height: 100%;
 }
+html{
+	font-size: 62.5%;
+}
 
+.headingfonts(){
+	font-family: 'Hepta Slab', serif;
+}
+
+.bodyfonts(){
+	font-family: 'Poppins', sans-serif;
+	font-size: 1.4rem;
+}
+header{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	nav{
+		display: flex;
+		justify-content: space-evenly;
+		width:70%;
+
+		a{
+			text-decoration: none;
+			font-size: 2rem;
+			width:10%;
+			
+		}
+	}
+}
+
+
+#intro{
+	display:flex;
+	justify-content: center;
+	.nameme{
+		display:flex;
+		flex-direction: column;
+		align-items: center;
+		width:45%;
+		padding: 5% 0;
+		border: 2px solid black;	
+		h1{
+			font-size: 4rem;	
+		}
+		p{
+			font-size: 2rem;
+		}
+	}
+}	
+.container{
+	display:flex;
+	flex-direction: row-reverse;
+	max-width: 100%; 
+	justify-content: flex-start;
+}
+
+.right{
+	border-left: 1px solid black;
+	line-height: 400%;
+	.aboutme{
+
+	}
+
+
+	h3{
+		.headingfonts();
+		font-size: 2.4rem;
+	}
+	h5{
+		.headingfonts();
+		font-size: 1.8rem;
+	}
+	h6{
+		.headingfonts();
+		font-size: 1.6rem;
+	}
+	p{
+		.bodyfonts();
+	}
+}
+
+.left{
+	width:30%;
+}
