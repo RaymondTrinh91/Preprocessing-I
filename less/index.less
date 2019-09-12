@@ -59,19 +59,21 @@ html, body {
 html{
 	font-size: 62.5%;
 }
+// mixin
+@headingfonts: 'Hepta Slab', serif;
 
-.headingfonts(){
-	font-family: 'Hepta Slab', serif;
-}
 
 .bodyfonts(){
 	font-family: 'Titillium Web', serif;	
 	font-size: 1.6rem;
 }
-
-header{
+.flexcenter(){
 	display:flex;
 	justify-content: center;
+}
+
+header{
+	.flexcenter();
 	align-items: center;
 	background-color: darkslategray;
 	nav{
@@ -80,8 +82,7 @@ header{
 		padding-top: 3%;
 		width:70%;
 		a{
-			display:flex;
-			justify-content: center;
+			.flexcenter();
 			text-decoration: none;
 			font-size: 2rem;
 			width:10%;
@@ -97,8 +98,7 @@ header{
 
 
 #intro{
-	display:flex;
-	justify-content: center;
+	.flexcenter();
 	background-image: linear-gradient(darkslategray,thistle);
 	border-bottom: 1px solid black;
 	.nameme{
@@ -111,8 +111,12 @@ header{
 		border: 2px solid black;	
 		h1{
 			font-size: 4rem;
-			.headingfonts();
+			font-family: @headingfonts;
 			
+			@media (max-width:800px){
+				font-size: 3rem;
+			}
+
 			@media (max-width:500px){
 				font-size: 2rem;
 			}
@@ -120,7 +124,7 @@ header{
 		}
 		p{
 			font-size: 2rem;
-			.headingfonts();
+			font-family: @headingfonts;
 			
 			@media (max-width:500px){
 				font-size: 1.4rem;
@@ -152,7 +156,7 @@ header{
 		width:100%;
 	}	
 	h3{
-		.headingfonts();
+		font-family: @headingfonts;
 		font-size: 2.4rem;
 		font-weight: bold;
 		border-bottom: 1px solid black;
@@ -162,7 +166,7 @@ header{
 		}
 	}
 	h5{
-		.headingfonts();
+		font-family: @headingfonts;
 		font-size: 1.8rem;
 		font-weight: 550;
 		
@@ -171,7 +175,7 @@ header{
 		}
 	}
 	h6{
-		.headingfonts();
+		font-family: @headingfonts;
 		font-size: 1.6rem;
 		font-style: italic;
 
@@ -212,13 +216,14 @@ header{
 	}
 	
 	h3{
-		.headingfonts();
+		font-family: @headingfonts;
 		font-size: 2rem;
 		font-weight: bold;
 		border-bottom: 1px solid black;
 	}
 
 	h5{
+		font-family: @headingfonts;
 		font-weight: bold;
 	}
 }
