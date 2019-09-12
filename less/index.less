@@ -59,9 +59,22 @@ html, body {
 html{
 	font-size: 62.5%;
 }
-// mixin
+// mixin & variables
 @headingfonts: 'Hepta Slab', serif;
+@fontcolor: @black;
+@hoverfont: @white;
+@background1: @dark;
+@background2: @purple;
+@background3: @lightpurple;
 
+@black: #000000;
+@white: #ffffff;
+@dark: #2f4f4f;
+@purple: #d8bfd8;
+@lightpurple: #bbb0bb;
+
+@mobile: ~"max-width:500px";
+@tablet: ~"max-width:800px";
 
 .bodyfonts(){
 	font-family: 'Titillium Web', serif;	
@@ -75,7 +88,7 @@ html{
 header{
 	.flexcenter();
 	align-items: center;
-	background-color: darkslategray;
+	background-color: @background1;
 	nav{
 		display: flex;
 		justify-content: space-evenly;
@@ -86,12 +99,12 @@ header{
 			text-decoration: none;
 			font-size: 2rem;
 			width:10%;
-			color:black;
+			color: @fontcolor;
 			.bodyfonts();
 		}
 		a:hover{
 			text-decoration: underline;
-			color:white;
+			color: @hoverfont;
 		}
 	}
 }
@@ -99,8 +112,8 @@ header{
 
 #intro{
 	.flexcenter();
-	background-image: linear-gradient(darkslategray,thistle);
-	border-bottom: 1px solid black;
+	background-image: linear-gradient(@background1,@background2);
+	border-bottom: 1px solid @fontcolor;
 	.nameme{
 		display:flex;
 		flex-direction: column;
@@ -108,16 +121,16 @@ header{
 		width:45%;
 		margin: 10% 0;
 		padding: 5% 0;
-		border: 2px solid black;	
+		border: 2px solid @fontcolor;	
 		h1{
 			font-size: 4rem;
 			font-family: @headingfonts;
 			
-			@media (max-width:800px){
+			@media (@tablet){
 				font-size: 3rem;
 			}
 
-			@media (max-width:500px){
+			@media (@mobile){
 				font-size: 2rem;
 			}
 
@@ -126,7 +139,7 @@ header{
 			font-size: 2rem;
 			font-family: @headingfonts;
 			
-			@media (max-width:500px){
+			@media (@mobile){
 				font-size: 1.4rem;
 			}
 
@@ -137,93 +150,93 @@ header{
 	display:flex;
 	flex-direction: row-reverse;
 	justify-content: flex-start;
-	background-image: linear-gradient(thistle,rgb(187, 176, 187));
+	background-image: linear-gradient(@background2,@background3);
 
-	@media (max-width:500px){
+	@media (@mobile){
 		flex-direction: column;
 	}
-}
 
-.right{
-	border-left: 1px solid black;
-	line-height: 350%;
-	letter-spacing: 2px;
-	padding-left: 2%;
-	width: 80%;
+	.right{
+		border-left: 1px solid @fontcolor;
+		line-height: 350%;
+		letter-spacing: 2px;
+		padding-left: 2%;
+		width: 80%;
 
-	@media (max-width:500px){
-		border-right: 1px solid black;
-		width:100%;
-	}	
-	h3{
-		font-family: @headingfonts;
-		font-size: 2.4rem;
-		font-weight: bold;
-		border-bottom: 1px solid black;
+		@media (@mobile){
+			border-right: 1px solid @fontcolor;
+			width:100%;
+		}	
+		h3{
+			font-family: @headingfonts;
+			font-size: 2.4rem;
+			font-weight: bold;
+			border-bottom: 1px solid @fontcolor;
 
-		@media (max-width:500px){
+			@media (@mobile){
+				font-size: 1.6rem;
+			}
+		}
+		h5{
+			font-family: @headingfonts;
+			font-size: 1.8rem;
+			font-weight: 550;
+			
+			@media (@mobile){
+				font-size: 1.4rem;
+			}
+		}
+		h6{
+			font-family: @headingfonts;
 			font-size: 1.6rem;
+			font-style: italic;
+
+			@media (@mobile){
+				font-size: 1.2rem;
+			}
+		}
+		p{
+			.bodyfonts();
+			padding: 2% 0;
+
+			@media (@mobile){
+				font-size: 1rem;
+			}
 		}
 	}
-	h5{
-		font-family: @headingfonts;
-		font-size: 1.8rem;
-		font-weight: 550;
-		
-		@media (max-width:500px){
-			font-size: 1.4rem;
-		}
-	}
-	h6{
-		font-family: @headingfonts;
-		font-size: 1.6rem;
-		font-style: italic;
 
-		@media (max-width:500px){
-			font-size: 1.2rem;
-		}
-	}
-	p{
-		.bodyfonts();
-		padding: 2% 0;
-
-		@media (max-width:500px){
-			font-size: 1rem;
-		}
-	}
-}
-
-.left{
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	width:20%;
-	max-width: 100%;
-	padding: 0 3%;
-
-	@media (max-width:500px){
-		flex-direction: row;
+	.left{
+		display: flex;
+		flex-direction: column;
 		justify-content: space-between;
-		width: 100%;
-		border-top: 1px solid black;
-	}
-	
-	div{
-		.bodyfonts();
-		font-size:1.3rem;
-		line-height: 200%;
-		
-	}
-	
-	h3{
-		font-family: @headingfonts;
-		font-size: 2rem;
-		font-weight: bold;
-		border-bottom: 1px solid black;
-	}
+		width:20%;
+		max-width: 100%;
+		padding: 0 3%;
 
-	h5{
-		font-family: @headingfonts;
-		font-weight: bold;
+		@media (@mobile){
+			flex-direction: row;
+			justify-content: space-between;
+			width: 100%;
+			border-top: 1px solid @fontcolor;
+		}
+		
+		div{
+			.bodyfonts();
+			font-size:1.3rem;
+			line-height: 200%;
+			
+		}
+		
+		h3{
+			font-family: @headingfonts;
+			font-size: 2rem;
+			font-weight: bold;
+			border-bottom: 1px solid @fontcolor;
+		}
+
+		h5{
+			font-family: @headingfonts;
+			font-weight: bold;
+		}
 	}
-}
+}//container
