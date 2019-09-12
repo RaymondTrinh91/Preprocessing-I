@@ -3,14 +3,15 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>My Resume</title>
 
   <link rel="stylesheet" href="css/index.css">
   <script type="text/javascript" src="http://livejs.com/live.js"></script>
   <style>
-      @import url('https://fonts.googleapis.com/css?family=Hepta+Slab|Poppins&display=swap');
-      </style>
+      @import url('https://fonts.googleapis.com/css?family=Hepta+Slab|Titillium+Web&display=swap');
+  </style>
+
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
   <![endif]-->
@@ -21,9 +22,9 @@
   <header>
     <nav>
       <a href="#intro">Home</a>
-      <a href="">About</a>
+      <a href="#aboutme">About</a>
       <a href="">Portfolio</a>
-      <a href="">Contact</a>
+      <a href="#infome">Contact</a>
     </nav>
   </header>
   
@@ -36,7 +37,7 @@
 <div class="container">
      
   <div class="right">
-      <div class="aboutme">
+      <div id="aboutme">
           <h3>About Me</h3>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis quidem libero porro perferendis qui. Totam blanditiis rem harum perspiciatis accusamus, quisquam assumenda numquam et? Ab voluptatum aliquam molestias nam perferendis.</p>
       </div>
@@ -63,7 +64,7 @@
         
         <div class="infome">
           
-          <h3>Info</h3>
+          <h3 id="infome">Info</h3>
             <div class="contactme">
               <h5>Address</h5>
                 <address>

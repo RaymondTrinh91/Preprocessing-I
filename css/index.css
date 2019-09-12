@@ -141,61 +141,154 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: darkslategray;
 }
 header nav {
   display: flex;
   justify-content: space-evenly;
+  padding-top: 3%;
   width: 70%;
 }
 header nav a {
+  display: flex;
+  justify-content: center;
   text-decoration: none;
   font-size: 2rem;
   width: 10%;
+  color: black;
+  font-family: 'Titillium Web', serif;
+  font-size: 1.6rem;
+}
+header nav a:hover {
+  text-decoration: underline;
+  color: white;
 }
 #intro {
   display: flex;
   justify-content: center;
+  background-image: linear-gradient(darkslategray, thistle);
+  border-bottom: 1px solid black;
 }
 #intro .nameme {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 45%;
+  margin: 10% 0;
   padding: 5% 0;
   border: 2px solid black;
 }
 #intro .nameme h1 {
   font-size: 4rem;
+  font-family: 'Hepta Slab', serif;
+}
+@media (max-width: 500px) {
+  #intro .nameme h1 {
+    font-size: 2rem;
+  }
 }
 #intro .nameme p {
   font-size: 2rem;
+  font-family: 'Hepta Slab', serif;
+}
+@media (max-width: 500px) {
+  #intro .nameme p {
+    font-size: 1.4rem;
+  }
 }
 .container {
   display: flex;
   flex-direction: row-reverse;
-  max-width: 100%;
   justify-content: flex-start;
+  background-image: linear-gradient(thistle, #bbb0bb);
+}
+@media (max-width: 500px) {
+  .container {
+    flex-direction: column;
+  }
 }
 .right {
   border-left: 1px solid black;
-  line-height: 400%;
+  line-height: 350%;
+  letter-spacing: 2px;
+  padding-left: 2%;
+  width: 80%;
+}
+@media (max-width: 500px) {
+  .right {
+    border-right: 1px solid black;
+    width: 100%;
+  }
 }
 .right h3 {
   font-family: 'Hepta Slab', serif;
   font-size: 2.4rem;
+  font-weight: bold;
+  border-bottom: 1px solid black;
+}
+@media (max-width: 500px) {
+  .right h3 {
+    font-size: 1.6rem;
+  }
 }
 .right h5 {
   font-family: 'Hepta Slab', serif;
   font-size: 1.8rem;
+  font-weight: 550;
+}
+@media (max-width: 500px) {
+  .right h5 {
+    font-size: 1.4rem;
+  }
 }
 .right h6 {
   font-family: 'Hepta Slab', serif;
   font-size: 1.6rem;
+  font-style: italic;
+}
+@media (max-width: 500px) {
+  .right h6 {
+    font-size: 1.2rem;
+  }
 }
 .right p {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.4rem;
+  font-family: 'Titillium Web', serif;
+  font-size: 1.6rem;
+  padding: 2% 0;
+}
+@media (max-width: 500px) {
+  .right p {
+    font-size: 1rem;
+  }
 }
 .left {
-  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 20%;
+  max-width: 100%;
+  padding: 0 3%;
+}
+@media (max-width: 500px) {
+  .left {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    border-top: 1px solid black;
+  }
+}
+.left div {
+  font-family: 'Titillium Web', serif;
+  font-size: 1.6rem;
+  font-size: 1.3rem;
+  line-height: 200%;
+}
+.left h3 {
+  font-family: 'Hepta Slab', serif;
+  font-size: 2rem;
+  font-weight: bold;
+  border-bottom: 1px solid black;
+}
+.left h5 {
+  font-weight: bold;
 }
