@@ -20,7 +20,7 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
+	font-size: 62.5%;
 	font: inherit;
 	vertical-align: baseline;
 }
@@ -56,4 +56,187 @@ table {
 html, body {
     height: 100%;
 }
+html{
+	font-size: 62.5%;
+}
+// mixin & variables
+@headingfonts: 'Hepta Slab', serif;
+@fontcolor: @black;
+@hoverfont: @white;
+@background1: @dark;
+@background2: @purple;
+@background3: @lightpurple;
 
+@black: #000000;
+@white: #ffffff;
+@dark: #2f4f4f;
+@purple: #d8bfd8;
+@lightpurple: #bbb0bb;
+
+@mobile: ~"max-width:500px";
+@tablet: ~"max-width:800px";
+
+.bodyfonts(){
+	font-family: 'Titillium Web', serif;	
+	font-size: 1.6rem;
+}
+.flexcenter(){
+	display:flex;
+	justify-content: center;
+}
+
+header{
+	.flexcenter();
+	align-items: center;
+	background-color: @background1;
+	nav{
+		display: flex;
+		justify-content: space-evenly;
+		padding-top: 3%;
+		width:70%;
+		a{
+			.flexcenter();
+			text-decoration: none;
+			font-size: 2rem;
+			width:10%;
+			color: @fontcolor;
+			.bodyfonts();
+		}
+		a:hover{
+			text-decoration: underline;
+			color: @hoverfont;
+		}
+	}
+}
+
+
+#intro{
+	.flexcenter();
+	background-image: linear-gradient(@background1,@background2);
+	border-bottom: 1px solid @fontcolor;
+	.nameme{
+		display:flex;
+		flex-direction: column;
+		align-items: center;
+		width:45%;
+		margin: 10% 0;
+		padding: 5% 0;
+		border: 2px solid @fontcolor;	
+		h1{
+			font-size: 4rem;
+			font-family: @headingfonts;
+			
+			@media (@tablet){
+				font-size: 3rem;
+			}
+
+			@media (@mobile){
+				font-size: 2rem;
+			}
+
+		}
+		p{
+			font-size: 2rem;
+			font-family: @headingfonts;
+			
+			@media (@mobile){
+				font-size: 1.4rem;
+			}
+
+		}
+	}
+}	
+.container{
+	display:flex;
+	flex-direction: row-reverse;
+	justify-content: flex-start;
+	background-image: linear-gradient(@background2,@background3);
+
+	@media (@mobile){
+		flex-direction: column;
+	}
+
+	.right{
+		border-left: 1px solid @fontcolor;
+		line-height: 350%;
+		letter-spacing: 2px;
+		padding-left: 2%;
+		width: 80%;
+
+		@media (@mobile){
+			border-right: 1px solid @fontcolor;
+			width:100%;
+		}	
+		h3{
+			font-family: @headingfonts;
+			font-size: 2.4rem;
+			font-weight: bold;
+			border-bottom: 1px solid @fontcolor;
+
+			@media (@mobile){
+				font-size: 1.6rem;
+			}
+		}
+		h5{
+			font-family: @headingfonts;
+			font-size: 1.8rem;
+			font-weight: 550;
+			
+			@media (@mobile){
+				font-size: 1.4rem;
+			}
+		}
+		h6{
+			font-family: @headingfonts;
+			font-size: 1.6rem;
+			font-style: italic;
+
+			@media (@mobile){
+				font-size: 1.2rem;
+			}
+		}
+		p{
+			.bodyfonts();
+			padding: 2% 0;
+
+			@media (@mobile){
+				font-size: 1rem;
+			}
+		}
+	}
+
+	.left{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		width:20%;
+		max-width: 100%;
+		padding: 0 3%;
+
+		@media (@mobile){
+			flex-direction: row;
+			justify-content: space-between;
+			width: 100%;
+			border-top: 1px solid @fontcolor;
+		}
+		
+		div{
+			.bodyfonts();
+			font-size:1.3rem;
+			line-height: 200%;
+			
+		}
+		
+		h3{
+			font-family: @headingfonts;
+			font-size: 2rem;
+			font-weight: bold;
+			border-bottom: 1px solid @fontcolor;
+		}
+
+		h5{
+			font-family: @headingfonts;
+			font-weight: bold;
+		}
+	}
+}//container
